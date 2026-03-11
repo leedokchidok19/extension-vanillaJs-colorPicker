@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "My Color Picker",
+    "description": "A simple color picker extension for Chrome.",
+    "version": "1.0",
+    "icons": {
+        "128": "img/icon128_white.png"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "img/icon128_white.png"
+    }
+}

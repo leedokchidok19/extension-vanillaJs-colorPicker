@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Color Picker</title>
+    <style>
+        main {
+            min-width: 240px;
+            max-width: 360px;
+            text-align: center;
+        }
+        #color-box {
+            margin: 8px auto;
+            width: 64px;
+            height: 64px;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: transparent; /* 텍스트 숨김 (클릭 복사용) */
+        }
+        #color-box:hover {
+            cursor: pointer;
+        }
+        button {
+            border: none;
+            border-radius: 8px;
+            padding: 8px;
+            width: 100%;
+            font-size: 1rem;
+            background-color: #efefef;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e0e0e0;
+        }
+        .rainbow-text {
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .result-color {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 8px;
+        }
+        .result-color > button {
+            width: 60px;
+            margin-left: 10px;
+        }
+        .d-none {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h3 class="rainbow-text">My Color Picker</h3>
+        <button id="color-button">Pick a Color</button>
+        <section id="result" class="d-none">
+            <div id="color-box" title="Click to copy HEX"></div>
+            <div class="result-color">
+                HEX: <span id="color-hex"></span>
+                <button data-target="color-hex">Copy</button>
+            </div>
+            <div class="result-color">
+                RGB: <span id="color-rgb"></span>
+                <button data-target="color-rgb">Copy</button>
+            </div>
+        </section>
+    </main>
+    <script src="popup.js"></script>
+</body>
+</html>
