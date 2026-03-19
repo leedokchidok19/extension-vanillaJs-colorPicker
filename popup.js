@@ -20,12 +20,28 @@ const hexToRgb = (hex) => {
     };
 };
 
-// 클립보드 복사 공통 함수
+// 환경 감지를 포함한 클립보드 복사 함수
 const copyToClipboard = async (text) => {
     if (!text) return;
     try {
         await navigator.clipboard.writeText(text);
-        alert(`Copied: ${text}`);
+        
+        // 1. 크롬 확장 프로그램 환경인지 확인 (chrome.notifications가 존재하는지)
+        if (typeof chrome !== 'undefined' && chrome.notifications) {
+            chrome.notifications.create({
+                type: 'basic',
+                iconUrl: 'default_icon128_white.png', // manifest.json의 default_icon과 맞춤
+                title: '복사 완료!',
+                message: `${text} 색상이 클립보드에 복사되었습니다.`,
+                priority: 1
+            });
+        } 
+        // 2. 일반 웹페이지(VS Code 테스트) 환경일 때 우회 처리
+        else {
+            console.log(`[Local Debug]Copied: ${text}`);
+            alert(`${text} 색상이 복사되었습니다.`);
+        }
+
     } catch (err) {
         console.error('클립보드 복사 실패:', err);
     }
