@@ -1,0 +1,53 @@
+main {
+    min-width: 240px;
+    max-width: 360px;
+    text-align: center;
+}
+#color-box {
+    margin: 8px auto;
+    width: 64px;
+    height: 64px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: transparent; /* 텍스트 숨김 (클릭 복사용) */
+}
+#color-box:hover {
+    cursor: pointer;
+}
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #efefef;
+    font-weight: bold;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #e0e0e0;
+}
+.rainbow-text {
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-block;
+}
+.result-color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+}
+.result-color > button {
+    width: 60px;
+    margin-left: 10px;
+}
+.d-none {
+    display: none;
+}
