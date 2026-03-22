@@ -7,21 +7,27 @@
     <title>My Color Picker</title>
 </head>
 <body>
+
     <main>
-        <h3 class="rainbow-text">My Color Picker</h3>
+
         <button id="color-button">Pick a Color</button>
+
         <section id="result" class="d-none">
             <div id="color-box" title="Click to copy HEX"></div>
-            <div class="result-color">
-                HEX: <span id="color-hex"></span>
-                <button data-target="color-hex">Copy</button>
+            <div class="result-color" data-target="color-hex">
+                <span class="color-label">HEX</span>
+                <span id="color-hex" class="color-value"></span>
             </div>
-            <div class="result-color">
-                RGB: <span id="color-rgb"></span>
-                <button data-target="color-rgb">Copy</button>
+            <div class="result-color" data-target="color-rgb">
+                <span class="color-label">RGB</span>
+                <span id="color-rgb" class="color-value"></span>
             </div>
         </section>
+
     </main>
+
     <script src="popup.js"></script>
+
 </body>
+
 </html>
