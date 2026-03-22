@@ -12,5 +12,14 @@
     "action": {
         "default_popup": "popup.html",
         "default_icon": "default_icon128_white.png"
+    },
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Alt+P",
+                "mac": "Command+Shift+P"
+            },
+            "description": "Open color picker"
+        }
     }
 }
