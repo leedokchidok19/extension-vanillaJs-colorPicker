@@ -123,3 +123,23 @@ elements.copyButtons.forEach(button => {
     });
 
 });
+
+// OS 감지 및 단축키 안내 텍스트 설정
+const updateShortcutTooltip = () => {
+    const shortcutElement = document.getElementById('shortcut-text');
+    if (!shortcutElement) return;
+
+    // OS 확인 (navigator.userAgent 또는 navigator.platform 사용)
+    const isMac = /Mac|iPhone|iPod|iPad/.test(navigator.userAgent);
+
+    if (isMac) {
+        // 맥 스타일: ⌘ + Shift + P (또는 Cmd + Shift + P)
+        shortcutElement.innerHTML = '<kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>';
+    } else {
+        // 윈도우/리눅스 스타일: Alt + P
+        shortcutElement.innerHTML = '<kbd>Alt</kbd> + <kbd>P</kbd>';
+    }
+};
+
+// 페이지 로드 시 실행
+document.addEventListener('DOMContentLoaded', updateShortcutTooltip);

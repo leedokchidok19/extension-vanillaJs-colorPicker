@@ -66,3 +66,28 @@ button:hover {
 .d-none {
     display: none;
 }
+
+/* 단축키 가이드 스타일 */
+.shortcut-guide {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+    font-size: 11px;
+    color: #888;
+}
+
+/* 키보드 자판 모양 스타일 */
+kbd {
+    background-color: #fafafa;
+    border: 1px solid #d1d5db;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    color: #444;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1;
+    padding: 2px 4px;
+    white-space: nowrap;
+}
